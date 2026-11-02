@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الدورات · لوحة الإدارة</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07050A">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body class="admin-body" data-admin="courses">
+  <div class="admin-shell">
+    <aside class="admin-side" id="admin-side"></aside>
+    <div class="admin-main">
+      <header class="admin-top" id="admin-top"></header>
+      <div class="admin-content">
+        <div class="toolbar">
+          <div class="flex gap-2 flex-wrap">
+            <input class="input" id="course-search" type="search" placeholder="ابحث عن دورة…" style="min-width:220px">
+            <select class="select" id="course-status-filter">
+              <option value="">كل الحالات</option>
+              <option value="published">منشورة</option>
+              <option value="draft">مسودّة</option>
+              <option value="archived">مؤرشفة</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" id="add-course">+ دورة جديدة</button>
+        </div>
+
+        <div class="card">
+          <div id="courses-loading" class="loading-line" style="padding:20px"><span class="spinner"></span>جارٍ تحميل الدورات…</div>
+          <div id="courses-table" class="table-wrap hidden" style="border:0">
+            <table class="data">
+              <thead>
+                <tr><th>الدورة</th><th>التصنيف</th><th>السعر</th><th>الحالة</th><th>الطلاب</th><th>إجراءات</th></tr>
+              </thead>
+              <tbody id="courses-body"></tbody>
+            </table>
+          </div>
+          <div id="courses-empty" class="hidden">
+            <div class="empty"><div class="icon">📚</div>لا توجد دورات بعد. ابدأ بإضافة أول دورة.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/supabase.js"></script>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/supabase.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/admin-shell.js"></script>
+  <script src="../assets/js/admin-courses.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الإعدادات · لوحة الإدارة</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07050A">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body class="admin-body" data-admin="settings">
+  <div class="admin-shell">
+    <aside class="admin-side" id="admin-side"></aside>
+    <div class="admin-main">
+      <header class="admin-top" id="admin-top"></header>
+      <div class="admin-content">
+        <form id="settings-form">
+          <div class="card card-pad">
+            <h2 style="font-size:15px;font-weight:800">هوية المنصة</h2>
+            <div class="form-grid mt-3">
+              <label class="field"><span class="label">اسم المنصة</span>
+                <input class="input" name="site_name" id="set-site_name" placeholder="طالب علم"></label>
+              <label class="field"><span class="label">الشعار النصي</span>
+                <input class="input" name="site_tagline" id="set-site_tagline" placeholder="تعلّم مهارة تصنع فرقًا"></label>
+            </div>
+          </div>
+
+          <div class="card card-pad mt-3">
+            <h2 style="font-size:15px;font-weight:800">التواصل والدعم</h2>
+            <div class="form-grid mt-3">
+              <label class="field"><span class="label">معرّف تلغرام (بدون @)</span>
+                <input class="input ltr" name="support_telegram" id="set-support_telegram" placeholder="talibelm_support"></label>
+              <label class="field"><span class="label">رقم واتساب (بصيغة دولية)</span>
+                <input class="input ltr" name="support_whatsapp" id="set-support_whatsapp" placeholder="9639xxxxxxxx"></label>
+              <label class="field"><span class="label">هاتف المالك للتنبيهات (اختياري)</span>
+                <input class="input ltr" name="admin_phones" id="set-admin_phones" placeholder="9639xxxxxxxx"></label>
+              <label class="field"><span class="label">ملاحظة الدفع</span>
+                <input class="input" name="payment_note" id="set-payment_note" placeholder="حوّل المبلغ كاملًا ثم أرفق الوصل."></label>
+            </div>
+          </div>
+
+          <div class="card card-pad mt-3">
+            <h2 style="font-size:15px;font-weight:800">الدفع عبر شام كاش</h2>
+            <div class="form-grid mt-3">
+              <label class="field"><span class="label">رقم شام كاش</span>
+                <input class="input ltr" name="sham_cash_number" id="set-sham_cash_number" placeholder="09xxxxxxxx"></label>
+              <label class="field"><span class="label">اسم المستفيد</span>
+                <input class="input" name="sham_cash_name" id="set-sham_cash_name" placeholder="اسم صاحب الحساب"></label>
+              <label class="field full"><span class="label">ملاحظة الوصل</span>
+                <input class="input" name="receipt_notice" id="set-receipt_notice" placeholder="تُراجع الوصولات خلال 24 ساعة."></label>
+            </div>
+          </div>
+
+          <div class="card card-pad mt-3">
+            <h2 style="font-size:15px;font-weight:800">شريط العرض في الرئيسية</h2>
+            <p class="tiny muted mt-1">اترك العنوان فارغًا لإخفاء الشريط.</p>
+            <div class="form-grid mt-3">
+              <label class="field"><span class="label">العنوان</span>
+                <input class="input" name="home_promo_title" id="set-home_promo_title"></label>
+              <label class="field"><span class="label">النص</span>
+                <input class="input" name="home_promo_text" id="set-home_promo_text"></label>
+              <label class="field"><span class="label">الشارة</span>
+                <input class="input" name="home_promo_badge" id="set-home_promo_badge" placeholder="عرض"></label>
+              <label class="field"><span class="label">نص الزر</span>
+                <input class="input" name="home_promo_cta" id="set-home_promo_cta" placeholder="استفد من العرض"></label>
+              <label class="field full"><span class="label">رابط الزر</span>
+                <input class="input ltr" name="home_promo_link" id="set-home_promo_link" placeholder="courses.html"></label>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center mt-4">
+            <p class="tiny muted">تُحدَّث الإعدادات فورًا على الموقع.</p>
+            <button class="btn btn-primary btn-lg" type="submit" id="save-settings">حفظ الإعدادات</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/supabase.js"></script>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/supabase.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/admin-shell.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

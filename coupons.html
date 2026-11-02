@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>أكواد الخصم · لوحة الإدارة</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07050A">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body class="admin-body" data-admin="coupons">
+  <div class="admin-shell">
+    <aside class="admin-side" id="admin-side"></aside>
+    <div class="admin-main">
+      <header class="admin-top" id="admin-top"></header>
+      <div class="admin-content">
+        <div class="toolbar">
+          <p class="tiny muted">أكواد الخصم تُطبّق على السلة كاملة. النسبة تُحسب من المجموع الفرعي.</p>
+          <button class="btn btn-primary" id="add-coupon">+ كود جديد</button>
+        </div>
+
+        <div class="card">
+          <div id="coupons-loading" class="loading-line" style="padding:20px"><span class="spinner"></span>جارٍ تحميل الأكواد…</div>
+          <div id="coupons-table" class="table-wrap hidden" style="border:0">
+            <table class="data">
+              <thead>
+                <tr><th>الكود</th><th>القيمة</th><th>الحد الأدنى</th><th>الاستخدام</th><th>الصلاحية</th><th>الحالة</th><th></th></tr>
+              </thead>
+              <tbody id="coupons-body"></tbody>
+            </table>
+          </div>
+          <div id="coupons-empty" class="hidden">
+            <div class="empty"><div class="icon">🎟</div>لا توجد أكواد خصم بعد.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/supabase.js"></script>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/supabase.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/admin-shell.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الطلبات · لوحة الإدارة</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07050A">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body class="admin-body" data-admin="orders">
+  <div class="admin-shell">
+    <aside class="admin-side" id="admin-side"></aside>
+    <div class="admin-main">
+      <header class="admin-top" id="admin-top"></header>
+      <div class="admin-content">
+        <div class="tabs" id="status-tabs">
+          <button class="tab active" data-status="pending_review">بانتظار المراجعة</button>
+          <button class="tab" data-status="awaiting_payment">بانتظار الدفع</button>
+          <button class="tab" data-status="approved">مفعّلة</button>
+          <button class="tab" data-status="rejected">مرفوضة</button>
+          <button class="tab" data-status="">الكل</button>
+        </div>
+
+        <div class="toolbar">
+          <div class="flex gap-2 flex-wrap">
+            <input class="input" id="order-search" type="search" placeholder="ابحث برقم الفاتورة أو اسم الطالب…" style="min-width:240px">
+            <button class="btn btn-ghost btn-sm" id="refresh-btn">تحديث</button>
+          </div>
+          <span class="tiny muted" id="orders-count"></span>
+        </div>
+
+        <div class="card">
+          <div id="orders-loading" class="loading-line" style="padding:20px"><span class="spinner"></span>جارٍ تحميل الطلبات…</div>
+          <div id="orders-table" class="table-wrap hidden" style="border:0">
+            <table class="data">
+              <thead>
+                <tr>
+                  <th>الفاتورة</th><th>الطالب</th><th>المبلغ</th><th>الحالة</th><th>التاريخ</th><th>إجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="orders-body"></tbody>
+            </table>
+          </div>
+          <div id="orders-empty" class="hidden">
+            <div class="empty"><div class="icon">🧾</div>لا توجد طلبات في هذه الحالة.</div>
+          </div>
+        </div>
+
+        <div class="pager">
+          <button class="btn btn-ghost btn-sm" id="prev-page" disabled>السابق</button>
+          <span class="tiny muted" id="page-label">صفحة 1</span>
+          <button class="btn btn-ghost btn-sm" id="next-page" disabled>التالي</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/supabase.js"></script>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/supabase.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/admin-shell.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

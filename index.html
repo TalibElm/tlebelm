@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>لوحة التحكم · طالب علم</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07050A">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body class="admin-body" data-admin="dashboard">
+  <div class="admin-shell">
+    <aside class="admin-side" id="admin-side"></aside>
+    <div class="admin-main">
+      <header class="admin-top" id="admin-top"></header>
+      <div class="admin-content">
+        <div class="stat-grid">
+          <div class="stat gold"><span>طلبات بانتظار المراجعة</span><strong id="stat-pending">—</strong></div>
+          <div class="stat green"><span>إجمالي المبيعات</span><strong id="stat-revenue" style="font-size:19px">—</strong></div>
+          <div class="stat accent"><span>الطلاب</span><strong id="stat-students">—</strong></div>
+          <div class="stat"><span>الدورات المنشورة</span><strong id="stat-courses">—</strong></div>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-head flex justify-between items-center">
+            <span>وصولات بانتظار المراجعة</span>
+            <a class="btn-link" href="orders.html">كل الطلبات ←</a>
+          </div>
+          <div id="pending-wrap">
+            <div class="loading-line" style="padding:18px"><span class="spinner"></span>جارٍ التحميل…</div>
+          </div>
+        </div>
+
+        <div class="grid grid-2 mt-4">
+          <div class="card">
+            <div class="card-head flex justify-between items-center">
+              <span>أحدث الطلاب</span>
+              <a class="btn-link" href="students.html">عرض الكل ←</a>
+            </div>
+            <div id="recent-students" class="card-body">
+              <div class="loading-line"><span class="spinner"></span>جارٍ التحميل…</div>
+            </div>
+          </div>
+
+          <div class="card card-pad">
+            <h2 style="font-size:14px;font-weight:800">إجراءات سريعة</h2>
+            <div class="grid gap-2 mt-3">
+              <a class="btn btn-primary" href="courses.html">إضافة دورة جديدة</a>
+              <a class="btn btn-ghost" href="coupons.html">إنشاء كود خصم</a>
+              <a class="btn btn-ghost" href="settings.html">تعديل إعدادات الدفع</a>
+            </div>
+            <div class="divider mt-3 mb-2"></div>
+            <p class="tiny muted">
+              نصيحة: بعد كل عملية دفع، افتح الطلب، راجع صورة الوصل، ثم اضغط «موافقة» لتفعيل الدورات تلقائيًا.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/supabase.js"></script>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/supabase.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/admin-shell.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>
